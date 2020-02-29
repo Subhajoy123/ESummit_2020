@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Esummit 2020</title>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+       
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">      
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>               
+
+
+  
+                   
+                    
+  <link rel="stylesheet" href="styles8.css">
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
+  <script>
+
+ 
+
+$(window).scroll(function(){
+	$('nav').toggleClass('scrolled', $(this).scrollTop() > 90);
+});
+ 
+
+
+
+$(window).scroll(function(){
+    $(".block").css("opacity", 1 - $(window).scrollTop() / 400);
+    
+  });
+  
+
+  
+ 
+  
+  $(document).ready(function() {
+preloaderFadeOutTime = 2000;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+
+
+var countDownDate = new Date("Mar 21, 2020 19:01:00").getTime();
+
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+ 
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "IT IS ON";
+  }
+}, 1000); 
+
+$(function() {
+  // vars for clients list carousel
+  // http://stackoverflow.com/questions/6759494/jquery-function-definition-in-a-carousel-script
+  var $clientcarousel = $('#clients-list');
+  var clients = $clientcarousel.children().length;
+  var clientwidth = (clients * 220); // 140px width for each client item 
+  $clientcarousel.css('width', clientwidth);
+
+  var rotating = true;
+  var clientspeed = 0;
+  var seeclients = setInterval(rotateClients, clientspeed);
+
+  $(document).on({
+    mouseenter: function() {
+      rotating = false; // turn off rotation when hovering
+    },
+    mouseleave: function() {
+      rotating = true;
+    }
+  }, '#clients');
+
+  function rotateClients() {
+    if (rotating != false) {
+      var $first = $('#clients-list li:first');
+      $first.animate({
+        'margin-left': '-220px'
+      }, 3000,"linear", function() {
+        $first.remove().css({
+          'margin-left': '0px'
+        });
+        $('#clients-list li:last').after($first);
+      });
+    }
+  }
+});
+$(function() {
+  // vars for clients list carousel
+  // http://stackoverflow.com/questions/6759494/jquery-function-definition-in-a-carousel-script
+  var $clientcarousel = $('#client-list');
+  var clients = $clientcarousel.children().length;
+  var clientwidth = (clients * 220); // 140px width for each client item 
+  $clientcarousel.css('width', clientwidth);
+
+  var rotating = true;
+  var clientspeed = 0;
+  var seeclients = setInterval(rotateClients, clientspeed);
+
+  $(document).on({
+    mouseenter: function() {
+      rotating = false; // turn off rotation when hovering
+    },
+    mouseleave: function() {
+      rotating = true;
+    }
+  }, '#client');
+
+  function rotateClients() {
+    if (rotating != false) {
+      var $first = $('#client-list li:first');
+      $first.animate({
+        'margin-left': '-220px'
+      }, 3000,"linear", function() {
+        $first.remove().css({
+          'margin-left': '0px'
+        });
+        $('#client-list li:last').after($first);
+      });
+    }
+  }
+});
+ 
+
+</script>
+    </head>
+    <body >
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        </div>
+      <nav class="navbar navbar-fixed-top">
+                
+                    <div class="col-xs-1 col-xs-offset-1">
+                        <div class="img-responsive">
+                                <a href="#"><img src="trio.jpg" height="45" width="110" alt=""></a>
+                        </div>
+                        
+                    </div>
+                           
+                         
+                            <div class="col-xs-1 col-xs-offset-2">
+                                    <div class="link">
+                                    <a href="#Members"><h5><b>MEMBERS</b></h5></a>
+                               </div>
+                            </div>
+                        
+                               <div class="col-xs-1 ">
+                                    <div class="link">
+                                       <a href="#About"><h5><b>ABOUT</b></h5></a>
+                                    </div>
+
+                               </div>
+                               <div class="col-xs-1 ">
+                                    <div class="link">
+                                    <a href="#Speakers"><h5><b>E-TALK</b></h5></a>
+                                </div>
+                            </div>
+                            <div class="col-xs-1 ">
+                                    <div class="link">
+                                    <a href="#Events"><h5><b>EVENTS</b></h5></a>
+                                        </div>
+                            </div>
+                            <div class="col-xs-1 ">
+                              <div class="link">
+                              <a href="#Sponcers"><h5><b>SPONCSORS</b></h5></a>
+                                  </div>
+                            </div>
+                                  <div class="col-xs-2 ">
+                                    <div class="link">
+                                    <a href="#After"><h5><b>AFTERMOVIE 2K19</b></h5></a>
+                                        </div>
+                                  </div>
+                      </div>
+                  
+                       <!---  <div class="option">
+                            <h5>OPTIONS</h5>
+                          </div> -->
+      <div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> </div>
+          <ul class="dropdown-menu">
+            <li><a href="#Members" style="color: skyblue;">MEMBERS</a></li>
+            <li><a href="#About" style="color: skyblue;">ABOUT</a></li>
+            <li><a href="#Speakers" style="color: skyblue;">E-Talk</a></li>
+            <li><a href="#Aftar" style="color: skyblue;">AFTERMOVIE 2K19</a></li>
+            <li><a href="#Events" style="color: skyblue;">EVENTS</a></li>
+            <li><a href="#Sponcers" style="color: skyblue;">SPONSORS</a></li>
+            
+          </ul>
+                  
+            </nav>
+             
+    
+            
+       
+        
+                   
+                   
+                    <div class="container" class="responsive" id="image">
+                              <div class="block">
+                               <br>
+                                <br>
+                                
+                                <h2 class="responsive" id="threeD">Esummit '20</h2>
+                                
+                                <p style="text-shadow: 2px 2px 2px #082b34;">presented by</p>
+                             
+                                <h3 id="threeD2">Entrepreneurship Development Cell</h3>
+                                <h3 id="threeD2">NIT Durgapur</h3>
+                                <br>
+                                <p class="typing">Unleash your Creativity!</p>
+                                
+                            </div>
+                            <br><br>
+                            <h2 style="text-align: center; color:white; font-size: 28px; display: block; text-shadow: 2px 2px 2px #082b34;">TIME LEFT</h2>
+                        <div id="demo"></div>
+                        </div>
+
+                       
+
+                   
+                    <div class="container" id="About" >   
+                            <div class="jumbotron" style="background-image: url(about.jpg);">
+                             <h1 style="color: white;">About</h1>
+                             <p style="margin-top: 15px;">The Entrepreneurship Summit, organised by the Entrepreneurship Development Cell of NIT Durgapur is usually held every year during the Entrepreneurship Week in the month of February. 
+                             <p> E-Summit is the second largest of it's kind in Eastern India. The mission of the summit is to educate and support student entrepreneurs, start-ups and SMEs for creating high-value jobs. This summit is organized not only in the interest of the students of NIT Durgapur but also for all those who are by and large interested in entrepreneurship related activities.</p>
+                             <p> E-Summit sees participation from multiple colleges throughout the country. Through e summit we hope to inspire and prepare the next wave of entrepreneurs who will know how to create and impact and keep on motivating .</p>
+                             <p> Since the very first ESummit organised in 2018, it has seen an exponential growth in its grandeur, we hope to expand its horizon further in the future.
+                              Famous personalities like Shaan Suhas Kumar (Miss India Earth 2017), Prajakta Koli (Mostly Sane), Rahul Kaushik (The Melting Words), Arindsm Nag (Anandabazar Patrika), besides other acclaimed personalities have come down for E-Talks of E Summit in the past few years. Various other events organised during  ESummit, like Auction Arcadia, Boardroom, Pitchfest are a hit. Apart from this several online events are also organised. 
+                              The main aim of E-SUMMIT is to offer a platform where colleges from different parts of the country get a chance to interact, enhance and demonstrate their creativity, personality and talents and foster entrepreneurial environment among the youth.
+                              
+                              
+                                </p>
+                    </div>       
+                    
+                    
+                         </div>
+
+                         
+                         
+                     
+                         <div class="container" id="carousal">
+                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                           <!-- Indicators -->
+                           <ol class="carousel-indicators">
+                             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                             
+                             
+                           </ol>
+                         
+                           <!-- Wrapper for slides -->
+                           <div class="carousel-inner" role="listbox">
+                             <div class="item active">
+                               <img src="esum1.jpg" alt="..." class="img-responsive center-block" style="height: 420px; width:1000px ;">
+                               <div class="carousel-caption">
+                                 ...
+                               </div>
+                             </div>
+                             <div class="item">
+                               <img src="esum7.jpg" alt="..." class="img-responsive center-block" style="height: 420px; width:1000px">
+                               <div class="carousel-caption">
+                                 ...
+                               </div>
+                             </div>
+                             <div class="item">
+                               <img src="esum4.jpg" alt="..." class="img-responsive center-block" style="height: 420px; width:1000px">
+                               <div class="carousel-caption">
+                                 ...
+                               </div>
+                             </div>
+                             <div class="item">
+                               <img src="esum2.jpg" alt="..." class="img-responsive center-block"  style="height: 420px; width:1000px">
+                               <div class="carousel-caption">
+                                 ...
+                               </div>
+                             </div>
+                             
+                           </div>
+                         
+                           <!-- Controls -->
+                           <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                             <span class="sr-only">Previous</span>
+                           </a>
+                           <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                             <span class="sr-only">Next</span>
+                           </a>
+                         </div>
+                       </div>
+ 
+
+                            <div class="container-fluid" id="Events">
+                              <h1 style="margin-top:5vh" >Events</h1>
+                              <div class="row" >
+                                <div class="col-sm-4 col-sm-offset-2">
+                                  <div class="thumbnail">
+                                     <img src="xchange.jpg" alt="cameras" > 
+                                     <h2>X-CHANGE</h2>
+                                      <p>
+                                        
+                                        Xchange is designed to test your bargaining and jugaad skills to survive with less and using resources efficiently. Is this what you do every day? Then, this event is definitely for you. XChange ditches the concept of money and journey back to the ancient barter system. It comprises of fun games spread over an area for you and your friends, making it a one-of-a-kind. It has to be played in teams of 4. Participation is based on the First-come-first service.
+                                        
+                                      </p>
+                                      
+                                   
+                                  </div>
+                                </div>
+                                <div class="col-sm-4 ">
+                                        <div class="thumbnail">
+                                          <img src="virtual.jpg" alt="cameras" >
+                                          
+                                            <h2>VIRTUAL TRADING COMPETITION</h2>
+                                            <p>gggggggggggggggggggg</p>
+                                        </div>
+                                </div>
+                                    
+                        </div>
+                         
+                           
+
+                       <div class="row" >
+                        <div class="col-sm-4 ">
+                          <div class="thumbnail">
+                             <img src="Boardroom.jpg" alt="cameras"> 
+                             <h2>BOARDROOM</h2>
+                              <p> Ever wanted to be one of the managing heads of a company such that your decision can turntables? Boardroom is the perfect event for you! It's going to give you the perfect corporate feel that you always wanted to experience. Be one among the Board of Directors of a hypothetical company and save it from a crisis and emerge victoriously.Participation is based on the First-come-first service.
+                              </p>
+                              
+                           
+                          </div>
+                        </div>
+                        <div class="col-sm-4 ">
+                                <div class="thumbnail">
+                                  <img src="Boardroom.jpg" alt="cameras">
+                                  
+                                    
+                                    <p>gggggggggggggggggggg</p>
+                                </div>
+                        </div>
+                                  <div class="col-sm-4 ">
+                                        <div class="thumbnail">
+                                          <img src="Boardroom.jpg" alt="cameras"> 
+                                          
+                                            
+                                            <p>gggggggggggggggggggg</p>
+                                          
+                                        </div>
+                                  </div>
+                </div>
+                      </div>
+                             
+
+
+
+
+                          
+                            <div class="container" id="Speakers">   
+                                    <div class="jumbotron">
+                                     <h1 style="margin-bottom:3vh; color: white;">E-Talk</h1>
+                                     <div class="container">
+                                            <p style="color:white;">E-Talk serves as a platform for those who wish to learn about Entrepreneurship. And what's better than hearing the journey of those who have carved an undisputed name in their respective fields. E-Talks is, therefore, an amalgamation of some of the finest and most distinguished names from a range of diverse fields. From YouTube superstars to CEOs to Founders to Entrepreneurs, we have it all covered. It's an opportunity to interact face to face with these stalwarts and make yourself noticeable. You never know, this might be a first step towards achieving the life of your dreams!
+                                            </p>
+                                         <div class="row" id="Events">
+                                             <div class="col-sm-4 ">
+                                               <div class="thumbnail">
+                                                  <img src="jobs.jfif" class="img-circle" alt="cameras"> 
+                                                   <h3>Speaker 1</h3>
+                                                   <p  style="color:white;">ggggggggggggggggggggjj</p>
+                                                  
+                                                   
+                                                
+                                               </div>
+                                             </div>
+                                             <div class="col-sm-4">
+                                                     <div class="thumbnail">
+                                                       <img src="jobs.jfif" class="img-circle" alt="cameras">
+                                                       
+                                                         <h3>Speaker 2</h3>
+                                                         <p style="color:white;">gggggggggggggggggggg</p>
+                                                     </div>
+                                             </div>
+                                                       <div class="col-sm-4">
+                                                             <div class="thumbnail">
+                                                               <img src="jobs.jfif" class="img-circle" alt="cameras"> 
+                                                               
+                                                                 <h3>Speaker 3</h3>
+                                                                 <p style="color:white;">gggggggggggggggggggg</p>
+                                                               
+                                                             </div>
+                                                       </div>
+                                     </div>
+                                     </div>  
+                                     
+                                                
+                                            <div class="row" id="Events">
+                                                <div class="col-sm-4">
+                                                  <div class="thumbnail">
+                                                     <img src="jobs.jfif" class="img-circle" alt="cameras"> 
+                                                      <h3 style="color: blue;">Speaker 4</h3>
+                                                      <p style="color:white;">ggggggggggggggggggggjj</p>
+                                                      
+                                                   
+                                                  </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                        <div class="thumbnail">
+                                                          <img src="jobs.jfif" class="img-circle" alt="cameras">
+                                                          
+                                                            <h3 style="color: blue;">Speaker 5</h3>
+                                                            <p style="color:white;">gggggggggggggggggggg</p>
+                                                        </div>
+                                                </div>
+                                                          <div class="col-sm-4">
+                                                                <div class="thumbnail">
+                                                                  <img src="jobs.jfif" class="img-circle" alt="cameras"> 
+                                                                  
+                                                                    <h3 style="color: blue;">Speaker 6</h3>
+                                                                    <p style="color:white;">gggggggggggggggggggg</p>
+                                                                  
+                                                                </div>
+                                                          </div>
+                                        </div>
+                                        </div>
+                            </div>           
+                                 </div>
+                                  
+
+                                 <div class="container-fluid" id="After">
+                                  <h1>Aftermovie 2k19</h1>
+                                  <iframe width="100%" height="600px" src="https://drive.google.com/file/d/1-2Lftzk4usrujx20x7mpbS4Ns2SJ_DHl/preview" style="background: blue;"></iframe>
+                              </div>
+
+                           
+                             
+                                 <div class="container-fluid" id="Sponcers" style="background-image: url(sponsor.jpg);">
+                                  <h1 style="margin-top: 25px;">Sponsors</h1>
+                                <div id="clients">
+                                  <div class="clients-wrap">
+                                    <ul id="clients-list" class="clearfix">
+                                      <li>
+                                        <img src="nestle.png" >
+                                        <h4 style="color: white;">Title partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="ravi.png" alt="First State Bank">
+                                        <h4 style="color: white;">Investment partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="venture.jfif" alt="Custom Aire">
+                                        <h4 style="color: white;">Breverage partner</h4>
+                                      </li>
+                                      
+                                    
+                                      <li>
+                                        <img src="techno.png" alt="Dakota Peat">
+                                        <h4 style="color: white;">Incubation partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="necter.png" alt="First State Bank">
+                                        <h4 style="color: white;">Investment partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="gate.jfif" alt="Dakota Molding">
+                                        <h4 style="color: white;">Education partner</h4>
+                                      </li>
+                                     
+                                    </ul>
+                                   
+                                  </div>
+                                  <!-- @end .clients-wrap -->
+                                </div>
+
+                                
+                                </div>
+
+
+
+                                <div class="container-fluid" style="background-image: url(sponsor.jpg);">
+                                 
+                                <div id="client">
+                                  <div class="client-wrap">
+                                    <ul id="client-list" class="clearfix">
+                                      <li>
+                                        <img src="barbeque.png" alt="First State Bank">
+                                        <h4 style="color: white;">Food partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="myway.jfif" >
+                                        <h4 style="color: white;">Internship partner</h4>
+                                      </li>
+                                      
+                                      <li>
+                                        <img src="arihant.jfif" alt="Custom Aire">
+                                        <h4 style="color: white;">Refreshment partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="idp.png" alt="First State Bank">
+                                        <h4 style="color: white;">Education partner</h4>
+                                      </li>
+                                       <li>
+                                        <img src="atkt.jfif" alt="Custom Aire">
+                                        <h4 style="color: white;">Media partner</h4>
+                                      </li>
+                                      <li>
+                                        <img src="subway.png" alt="Dakota Molding">
+                                        <h4 style="color: white;">Food partner</h4>
+                                      </li>
+                                    
+                                    </ul>
+                                   
+                                  </div>
+                                  <!-- @end .clients-wrap -->
+                                </div>
+
+                                
+                                </div>
+
+
+                                <br>
+                                
+                                 <div class="container-fluid" style="background-image: url(members.JPG); background-size: cover;">
+                                  <h1>Members</h1>
+                               
+                            
+                                <div class="container-fluid team" id="Members">
+                                <div class="row">
+                                    <div class=" col-sm-4 ">
+                                      <div class="card">
+                                        <img src="pra.jpg" alt="Presi" style=" height: 150px">
+                                        <div class="container">
+                                          <h3>Pranay Ray</h3>
+                                          
+                                          <p>President</p>
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                  
+                                    <div class=" col-sm-4 ">
+                                      <div class="card">
+                                        <img src="sur.jpg" alt="VP" style=" height: 150px">
+                                        <div class="container">
+                                          <h3>Suryaprakash Singodiya</h3>
+                                          
+                                          <p>Vice President</p>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                               
+                                    <div class=" col-sm-4 ">
+                                      <div class="card">
+                                        <img src="satya.jpg" alt="tech" style=" height: 150px">
+                                        <div class="container">
+                                          <h3>Satyajit Das</h3>
+                                         
+                                          <p>Gen. Secretary</p>
+                                          
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class=" col-sm-4 ">
+                                        <div class="card">
+                                          <img src="mou.jpg" alt="member" style=" height: 150px">
+                                          <div class="container">
+                                            <h3>Mouchandra Paul</h3>
+                                            
+                                            <p>Conveynor</p>
+                                           
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class=" col-sm-4 ">
+                                        <div class="card">
+                                          <img src="kis.jpg" alt="member" style=" height: 150px">
+                                          <div class="container">
+                                            <h3>Kishore G. Reddy</h3>
+                                            
+                                            <p>Treasurer</p>
+                                           
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class=" col-sm-4 ">
+                                        <div class="card">
+                                          <img src="pre.jpg" alt="member" style=" height: 150px">
+                                          <div class="container">
+                                            <h3>Preethi Rishitha</h3>
+                                            
+                                            <p >Sen. Executive</p>
+                                            
+                                          </div>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  </div>
+                                 </div>
+                                 
+                                     <div class="contact" id="us">   
+                                               <div class="row" >
+                                                     <div class=" col-xs-3 col-xs-offset-1">
+                                                      <img src="edc new logo 2.png" alt=""  id="last">
+                                                     </div>
+                                                    
+                                                          
+                                                               
+                                                       
+                                                          <div class=" col-xs-4 ">
+                                                               
+                                                               
+                                                                <div class="sec">
+                                                                        <h3> Follow us</h3>
+                                                                        
+                                                                        
+                                                                    <div id="services">
+                                                                          
+                                                                            <li>
+                                                                              <div class="facebook">
+                                                                                <a href="https://www.facebook.com/edc.nitd/">
+                                                                                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                                                                                </a>
+                                                                              </div>
+                                                                              
+                                                                            </li>
+                                                                            
+                                                                            <li>
+                                                                              <div class="youtube">
+                                                                                <a href="https://www.youtube.com/channel/UCaBiTXfp5gknGPS6N3asDBg">
+                                                                                  <i class="fa fa-youtube" aria-hidden="true"></i>
+                                                                                </a>
+                                                                              </div>
+                                                                              
+                                                                          </li>
+                                                                          <li>
+                                                                                  <div class="linkedin">
+                                                                                    <a href="https://www.linkedin.com/company/edcnitd">
+                                                                                      <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                                                                    </a>
+                                                                                  </div>
+                                                                                  
+                                                                              </li>
+                                                                              
+                                                                          </ul>
+                                                                    </div>
+                                                                   
+                                                            </div>
+                                                          </div>
+                                                              <div class=" col-xs-4 ">
+                                                                  
+                                                                    <h3>Contacts</h3>
+                                                                    <p> 84984651865- Name</p>
+                                                                    <p> 54865652154- Name</p>
+                                                                  </div>
+                                                </div>
+                                                </div>
+                                           
+                                                   </body>
+        
+                    
+</html>
